@@ -1,0 +1,23 @@
+{% include "top.html" %}
+
+<div class="container">
+        <h3>Status</h3>
+        <h2>DNS</h2>
+        {% for values in dns %}
+
+            <h5>{{ values[0] }} >> {{ values[1] }}</h5>
+
+        {% endfor %}
+        <h2>TCP Connections</h2>
+        {% for con in tcp_con %}
+
+            <h5>{{ con }}</h5>
+
+        {% endfor %}
+        <h2>Current Releases</h2>
+
+        {% for rele in release %}
+                <h5>{{ rele[0] }}  >> {{ rele[1] }}</h5>
+        {% endfor %}
+
+    </div>

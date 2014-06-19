@@ -1,0 +1,71 @@
+<!doctype html>
+<head>
+    <title>Hello from Flask</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.css">
+
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.js"></script>
+
+
+
+
+</head>
+
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Syco Chuck</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Status</a></li>
+      <li class="active"><a href="/test">Tests</a></li>
+        <li><a href="control">Control</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Release<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/relese-webres">Webres</a></li>
+          <li><a href="/relese-rentalfront">Rentalfront</a></li>
+          <li><a href="/release-farepayment">Farepayment</a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="container">
+
+
+
+    <h3>Test Status Run 2013-11-27 12:23</h3>
+<div class="table-responsive">
+  <table class="table">
+    <tr><td>Webres</td><td>OK</td></tr>
+    <tr><td>Rentalfront</td><td>OK</td></tr>
+      <tr><td>PBK</td><td>OK</td></tr>
+      <tr class="danger" ><td>Farepayment</td><td>ERROR</td></tr>
+  </table>
+</div>
+    <button type="button" class="btn btn-primary">Re-run Test</button>
+
+
+</div><!-- closing Container -->

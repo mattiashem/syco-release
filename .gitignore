@@ -1,0 +1,4 @@
+static/file_*
+*.pyc
+release.cfg
+Config/release.cfg

@@ -1,0 +1,61 @@
+{% include "top.html" %}
+
+<div class="container">
+
+{% if result %}
+    <script>
+    $(function(){
+      var Poller = {
+        interval: null,
+        PERIOD: 1000,
+        start: function(){
+          self.interval = setInterval(function(){
+            $.ajax({
+              url: '/static/file_{{ file }}',
+              cache: false,
+              success: function(data){
+                $('#output').html(data);
+              }
+            });
+          }, Poller.PERIOD);
+        },
+        stop: function(){
+          clearInterval(self.interval);
+        }
+      };
+
+      $('#start-button').click(Poller.start);
+      $('#stop-button').click(Poller.stop);
+      Poller.start;
+    });
+
+
+  </script>
+
+<button id="start-button" class="btn btn-success">Start</button>
+<button id="stop-button" class="btn btn-danger">Stop</button>
+<pre id="output" style=""></pre>
+
+{% endif %}
+
+
+
+<div class="row">
+  <div class="col-md-4">
+
+    <h3>PBK Release</h3>
+<form name="form" role="form" method="post">
+  <div class="form-group">
+    <label for="tag">TAG</label>
+    <input type="text" class="form-control" id="tag" placeholder="Enter tag" name="tag">
+</div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Confirm
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Release</button>
+</form>
+
+</div>
+    </div>

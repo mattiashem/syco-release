@@ -1,0 +1,182 @@
+{% include "top.html" %}
+
+<div class="container">
+
+
+
+<div class="table-responsive">
+
+  <table class="table" style="background-color:#F05048; color:#ffffff">
+        <h2>Webres</h2>
+
+
+    <tr><td width="500"><b>Webres Maintence Mode</b></td><td>
+
+        <ul class="pagination">
+            <li onclick="env('we-men-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('we-men-off');"  ><a href="#">OFF</a></li>
+        </ul>
+    </td></tr>
+      <tr><td width="500"><b>Webress Apache Webbserver</b></td><td>
+
+        <ul class="pagination">
+            <li onclick="env('we-ap-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('we-ap-off');"  ><a href="#">OFF</a></li>
+        </ul>
+    </td></tr>
+
+    </table>
+
+    <table class="table" style="background-color:#A37031;color:#ffffff">
+    <h2>Rentalfront</h2>
+    <tr><td width="500"><b>Rentalfront Apache Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('rf-ap-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('rf-ap-off');"  ><a href="#">OFF</a></li>
+        </ul>
+
+        <tr><td width="500"><b>Rentalfront Glassfish Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('rf-gf-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('rf-gf-off');"  ><a href="#">OFF</a></li>
+        </ul>
+
+
+    </td></tr>
+
+         </table>
+<table class="table" style="background-color:#F0A448; color:#ffffff">
+    <h2>Farepayment</h2>
+
+          <tr><td width="500"><b>Farepayment Apache Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('fp-ap-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('fp-ap-off');"  ><a href="#">OFF</a></li>
+        </ul>
+    </td></tr>
+
+        <tr><td width="500"><b>Farepayment Glassfish Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('fp-gf-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('fp-gf-off');"  ><a href="#">OFF</a></li>
+        </ul>
+
+    </td></tr>
+
+    </table>
+<table class="table" style="background-color:#5C5C5C; color:#ffffff">
+        <h2>EFF and PBK</h2>
+          <tr><td width="500"><b>EFF Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('eff-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('eff-off');"  ><a href="#">OFF</a></li>
+        </ul>
+
+        </td></tr>
+        <tr><td width="500"><b>PBK Webbserver</b></td><td>
+         <ul class="pagination">
+            <li onclick="env('pbk-on');"  ><a href="#">ON</a></li>
+            <li onclick="env('pbk-off');"  ><a href="#">OFF</a></li>
+        </ul>
+
+    </td></tr>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Varning this will take action on PRDUCTION SERVERS</h4>
+      </div>
+      <div class="modal-body">
+        Changing the state of the production server will stop all connctions to the server
+          Only progress if you now what you are doing !!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="go()">Send Command</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="modal fade" id="rModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Runnings commands on server</h4>
+      </div>
+      <div class="modal-body">
+            <script>
+    $(function(){
+      var Poller = {
+        interval: null,
+        PERIOD: 1000,
+        start: function(){
+          self.interval = setInterval(function(){
+            $.ajax({
+              url: '/static/file_{{ file }}',
+              cache: false,
+              success: function(data){
+                $('#output').html(data);
+              }
+            });
+          }, Poller.PERIOD);
+        },
+        stop: function(){
+          clearInterval(self.interval);
+        }
+      };
+
+      $('#start-button').click(Poller.start);
+      $('#stop-button').click(Poller.stop);
+      Poller.start;
+    });
+
+
+  </script>
+
+<button id="start-button" class="btn btn-success">Start</button>
+<button id="stop-button" class="btn btn-danger">Stop</button>
+          <pre id="output" style=""></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- closing Container -->
+
+<script>
+
+var locations;
+
+function env(env){
+        locations = env;
+        $('#myModal').modal('show');
+}
+
+function go(){
+        $.ajax({
+        url: "/run",
+        type: "post",
+        data: "loca="+locations+"&file=file_{{ file }}",
+        success: function(){
+            $('#rModal').modal('show');
+        },
+        error:function(){
+            alert("failure");
+        }
+    });
+}
+
+
+</script>
