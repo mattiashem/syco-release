@@ -4,26 +4,27 @@ Release tool
 
 #######Installation
 
-1. Install docker and docker-compose on your machine.
+-- Install docker and docker-compose on your machine.
 
-https://docs.docker.com/installation/
-https://docs.docker.com/compose/install/
+    https://docs.docker.com/installation/
+    https://docs.docker.com/compose/install/
 
-2. Build the app
-docker-compose build
+-- Build the app
+    docker-compose build
 
-3. To run the type
-docker-compose run
-http://localhost:5000
+-- To run the type
+    docker-compose run app
+
+    http://localhost:5000
 
 
 
 
 #######Flow
 
-1. wepage (flask) show form to do release and get a post
+-- wepage (flask) show form to do release and get a post
 
-2. The post is recived in examle relesewebres.
+-- The post is recived in examle relesewebres.
 The view extract the data that it need for the release example the release tag and datacenter.
 
 It also creates a uniq filename. and start a new background process
@@ -34,7 +35,8 @@ It also creates a uniq filename. and start a new background process
 
 
 
-3. the backgrounden process take tha values and trigges the correct fabric script
+
+-- the backgrounden process take tha values and trigges the correct fabric script
 
 def f(file,target,tag,datacenter):
      if "Release" == target:
@@ -59,7 +61,7 @@ It also setup so that all info from teh fabric script is sent to a file.
 
 
 
-3. The pages is up and now two new bottons show "start" and "stop" they will start i javascript that sill live fead the data from
+-- The pages is up and now two new bottons show "start" and "stop" they will start i javascript that sill live fead the data from
 the file we created before and that the fabric script is sending its data to.
 
 

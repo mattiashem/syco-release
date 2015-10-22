@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c019804-f454-4ccb-981d-2ad6934cee0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/fabile.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/req.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/constants.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/eff.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/farepayment.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/pbk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/rentalfront.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/a05f36f0-67d3-44d2-b913-32e24de05614" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/b6d351da-17c3-4c77-ad1b-c8ec128c1aad" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/c18b13b3-cded-4823-a19f-24908f1dee31" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/defcdeb8-62ce-4725-8677-6a88574e6b79" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Release.iml" afterPath="$PROJECT_DIR$/.idea/Release.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/__init__.py" afterPath="$PROJECT_DIR$/modules/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/commands.py" afterPath="$PROJECT_DIR$/modules/commands.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/config_control.py" afterPath="$PROJECT_DIR$/modules/config_control.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fabfile.py" afterPath="$PROJECT_DIR$/fabfile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.py" afterPath="$PROJECT_DIR$/modules/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/status_check.py" afterPath="$PROJECT_DIR$/modules/status_check.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/webres.py" afterPath="$PROJECT_DIR$/modules/webres.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Release.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,8 +110,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37723213">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.90401787">
+              <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -758,8 +735,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37723213">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.90401787">
+          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
           <folding />
         </state>
       </provider>
