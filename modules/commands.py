@@ -2,22 +2,21 @@ import subprocess
 from multiprocessing import Process
 from uuid import uuid4
 
+from modules import app
 from flask import Flask
 from flask import render_template
 from flask import request
-from task import *
 
 
 
 
-ssh = "/home/mattias/projects/Release/Config/sshCommand.py ssh"
-file_location= "/home/mattias/projects/Release/static/"
+file_location= "/code/static/"
 
 def f(file,cmd):
     #print "Running ssh"
     #print "run ssh " + file
-    subprocess.Popen(ssh+ " "+cmd+" >> "+file_location+file,shell=True,stdout=subprocess.PIPE).communicate()[0]
-    print ssh+ " "+cmd+" >> "+file_location+file
+    subprocess.Popen(fab+ " "+cmd+" >> "+file_location+file,shell=True,stdout=subprocess.PIPE).communicate()[0]
+    print(ssh+ " "+cmd+" >> "+file_location+file)
 
 
 
@@ -27,7 +26,7 @@ def run():
     what = request.form['loca']
     filename = request.form['file']
     subprocess.Popen("rm -f "+str(file_location)+str(filename),shell=True,stdout=subprocess.PIPE).communicate()[0]
-    print "rm -f "+str(file_location)+str(filename)
+    print("rm -f "+str(file_location)+str(filename))
 
     #######################################3
     ### WEBRES
@@ -182,8 +181,8 @@ def run():
         '''
         No match
         '''
-        print "No match"
+        print("No match")
 
 
 
-    return "hej"
+    return False

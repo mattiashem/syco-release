@@ -3,11 +3,9 @@ from flask import render_template
 from flask import request
 
 from modules import app
-from constants import GITHUB_AUTH
-from githubauth import GithubAuth
 from uuid import uuid4
-from status_check import check_dns,check_con_tcp
-from config_control import writeconfig, getSection
+from modules.status_check import check_dns,check_con_tcp
+from modules.config_control import writeconfig, getSection
 import cgi
 
 

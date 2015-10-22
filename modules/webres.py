@@ -1,15 +1,14 @@
 import subprocess
 from multiprocessing import Process
 from uuid import uuid4
-
+from modules import app
 from flask import Flask
 from flask import render_template
 from flask import request
-from task import *
-from status_check import check_dns_hosts
+from modules.status_check import check_dns_hosts
 
 
-file_location= "/home/mattias/projects/Release/static/"
+file_location= "/code/static/"
 
 '''
 Setting upp the fab command that will be run when releasing
@@ -22,7 +21,7 @@ def f(file,target,tag,datacenter):
      if "Release" == target:
         #Running release commands
         subprocess.Popen("fab webres_release:"+tag+","+datacenter+" >> "+file_location+"file_"+file, shell=True, stdout=subprocess.PIPE).communicate()[0]
-        print "release"
+        print("release")
      elif target is "Uat":
         #Running UAT commands
         pass
@@ -30,7 +29,7 @@ def f(file,target,tag,datacenter):
         #Running on prod servers
         pass
      else:
-        print "Incorrect target"
+        print("Incorrect target")
 
 
 '''

@@ -1,4 +1,5 @@
-import ConfigParser, os
+
+import configparser, os
 
 #Writing to configfile
 
@@ -9,9 +10,9 @@ def writeconfig(section,name,value):
     '''
     Wrinting data to config file
     '''
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.read(theconfig)
-    config_out = ConfigParser.RawConfigParser()
+    config_out = configparser.RawConfigParser()
     #print "addind values"
     #Read config and ad new values
     for section_name in config.sections():
@@ -43,7 +44,7 @@ def getValue(section,name):
 
 
 def getSection(section):
-    Config = ConfigParser.ConfigParser()
+    Config = configparser.ConfigParser()
     Config.read(theconfig)
     dict1 = []
     options = Config.options(section)

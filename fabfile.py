@@ -27,7 +27,7 @@ Release of webres
 @roles('webres-release')
 def webres_release(tags,datacenter):
     if datacenter == "av":
-        print "RELEASEING WITH PRODUCTION AV"
+        print("RELEASEING WITH PRODUCTION AV")
 
         #Making mysql backup by sending request to mysql server
         execute(mysql_backup_dump, tags='tags', db='bacula', host='192.168.44.2')
@@ -45,7 +45,7 @@ def webres_release(tags,datacenter):
 
 
     elif datacenter == "tc":
-        print "RELEASEING WITH PRODUCTION TC"
+        print("RELEASEING WITH PRODUCTION TC")
         #Adding release tag to config file
         writeconfig('Release','Webres',tags)
         #Running the release
@@ -55,13 +55,13 @@ def webres_release(tags,datacenter):
         #Running sudo command
         sudo("cat /etc/passwd")
     else:
-        print "ERROR IN DATACENTER"
+        print ("ERROR IN DATACENTER")
 
 
 
 
 def mysql_backup_dump(tags, db):
-    print "Making mysql_backup_dump"
+    print(Making mysql_backup_dump)
     date = time.strftime("%Y-%m-%d")
 
     run('mysqldump '+db+' > /var/backup/mysqldumpt_'+db+'_'+tags+'_'+date+'.sql')

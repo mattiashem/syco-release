@@ -12,7 +12,7 @@ def check_tcp(address, port):
 		s.connect((address, port))
 		return "Connected to %s on port %s" % (address, port)
 		return True
-	except socket.error, e:
+	except :
 		return "Connection to %s on port %s failed: %s" % (address, port, e)
 		return False
 
@@ -35,7 +35,7 @@ def check_dns(name):
         answer=dns.resolver.query(domain, "CNAME")
         domain_list={}
         for data in answer:
-            print domain + " > "+ str(data)
+            print(domain + " > "+ str(data))
         answer_list.append([domain,str(data)])
     return answer_list
 
